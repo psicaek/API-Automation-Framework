@@ -6,11 +6,11 @@
 
 A scalable API test automation framework for the Open-Meteo Weather API, built with Python and Pytest.
 
-## 🎯 Project Overview
+## Project Overview
 
 This repository contains automated API tests for the [Open-Meteo Weather API](https://open-meteo.com/), demonstrating comprehensive test coverage including positive scenarios, parametrized tests, and negative testing [web:11][web:12].
 
-## 📋 Test Cases
+## Test Cases
 
 | Test Case | Description                                                           | Endpoint        | Validations                                                                                                                         | Expected Result                                                                               |
 | --------- | --------------------------------------------------------------------- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
@@ -19,7 +19,7 @@ This repository contains automated API tests for the [Open-Meteo Weather API](ht
 | **TC003** | Verify daily forecast data                                            | `GET /forecast` | • Status code 200<br>• Response time ≤3s<br>• Valid JSON format<br>• Contains daily max/min temperatures<br>• Time array populated  | Successfully returns 7-day forecast with daily temperature ranges                             |
 | **TC004** | Invalid coordinates handling (Negative Test)                          | `GET /forecast` | • Status code 400<br>• API rejects invalid latitude (999)<br>• API rejects invalid longitude (999)                                  | API returns 400 Bad Request and handles invalid input gracefully                              |
 
-## 🔍 Validation Strategy & Rationale
+## Validation Strategy & Rationale
 
 ### Status Code Validation
 
@@ -55,4 +55,4 @@ This repository contains automated API tests for the [Open-Meteo Weather API](ht
 
 **Implementation:** TC004 sends coordinates outside valid ranges (lat: -90 to 90, lon: -180 to 180) and expects proper 400 responses.
 
-## 🏗️ Repository Structure
+## Repository Structure
