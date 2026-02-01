@@ -57,3 +57,7 @@ This repository contains automated API tests for the [Open-Meteo Weather API](ht
 **Implementation:** TC004 sends coordinates outside valid ranges (lat: -90 to 90, lon: -180 to 180) and expects proper 400 responses.
 
 **TC005** attempts to access an invalid endpoint (`/v1/invalid_endpoint`) to verify the API returns 404 Not Found, ensuring proper routing error handling and preventing silent failures for incorrect URLs
+
+## Test Execution Demo
+
+![API Tests Running](demo.gif)
