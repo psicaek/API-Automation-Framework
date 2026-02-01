@@ -1,7 +1,3 @@
-"""
-Pytest fixtures
-"""
-
 import pytest
 import logging
 from utils.api_client import OpenMeteoAPIClient, OpenMeteoResponseValidator

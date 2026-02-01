@@ -7,17 +7,17 @@ class OpenMeteoAPIConfig:
     """Open-Meteo API Configuration"""
 
     # Base URL
-    BASE_URL = "https://api.open-meteo.com/v1"  # TODO: Fill this in
+    BASE_URL = "https://api.open-meteo.com/v1"
 
     # Endpoints
-    FORECAST_ENDPOINT = "/forecast"  # TODO: What's the forecast endpoint?
+    FORECAST_ENDPOINT = "/forecast"
 
     # Expected Response Times (in seconds)
-    MAX_RESPONSE_TIME = 3.0  # TODO: What's reasonable? 3? 5?
+    MAX_RESPONSE_TIME = 3.0
 
     # HTTP Status Codes
-    STATUS_OK = 200  # TODO: What status code means success?
-    STATUS_BAD_REQUEST = 400  # TODO: What code means bad request?
+    STATUS_OK = 200
+    STATUS_BAD_REQUEST = 400
 
     # Test Locations (Nuremberg coordinates)
     NUREMBERG_LAT = 49.4521

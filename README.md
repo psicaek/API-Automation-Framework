@@ -18,6 +18,7 @@ This repository contains automated API tests for the [Open-Meteo Weather API](ht
 | **TC002** | Verify hourly forecast data                                           | `GET /forecast` | • Status code 200<br>• Response time ≤3s<br>• Valid JSON format<br>• Contains hourly array<br>• Time array populated                | Successfully returns hourly forecast with temperature and precipitation arrays                |
 | **TC003** | Verify daily forecast data                                            | `GET /forecast` | • Status code 200<br>• Response time ≤3s<br>• Valid JSON format<br>• Contains daily max/min temperatures<br>• Time array populated  | Successfully returns 7-day forecast with daily temperature ranges                             |
 | **TC004** | Invalid coordinates handling (Negative Test)                          | `GET /forecast` | • Status code 400<br>• API rejects invalid latitude (999)<br>• API rejects invalid longitude (999)                                  | API returns 400 Bad Request and handles invalid input gracefully                              |
+| **TC005** | Invalid Endpoint (Negative Test)                                      | `GET /forecast` | • The server cannot find the requested resource<br>• API handles routing errors gracefully                                          | API returns 404 Not Found for non-existent endpoint                                           |
 
 ## Validation Strategy & Rationale
 

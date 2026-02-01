@@ -1,7 +1,3 @@
-"""
-Test suite for Open-Meteo API
-"""
-
 import pytest
 from utils.config import OpenMeteoAPIConfig
 
@@ -157,3 +153,26 @@ class TestCurrentWeather:
         validator.validate_status_code(response, 400)
 
         logger.info("✓ API correctly returned 400 for invalid coordinates")
+
+    def test_invalid_endpoint(self, api_client, validator, logger):
+        """
+        TC005: Verify API returns 404 for non-existent endpoints (Negative test)
+
+        Validations:
+        - Status code is 404 Not Found
+        - API handles routing errors gracefully
+        """
+        logger.info("TC005: Testing invalid endpoint handling")
+
+        params = {
+            "latitude": OpenMeteoAPIConfig.NUREMBERG_LAT,
+            "longitude": OpenMeteoAPIConfig.NUREMBERG_LON,
+            "current": "temperature_2m",
+        }
+
+        # Use wrong endpoint
+        response = api_client.get("/v1/invalid_endpoint", params=params)
+
+        validator.validate_status_code(response, 404)
+
+        logger.info("✓ API correctly returned 404 for invalid endpoint")
