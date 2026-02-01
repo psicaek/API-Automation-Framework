@@ -42,7 +42,7 @@ This repository contains automated API tests for the [Open-Meteo Weather API](ht
 
 ### Business Logic Validation
 
-**Why:** Data must be realistic and within acceptable bounds [web:20]. Weather data outside physical limits (-50°C to 50°C) indicates API errors.
+**Why:** Data must be realistic and within acceptable bounds . Weather data outside physical limits (-50°C to 50°C) indicates API errors.
 
 **Implementation:**
 
@@ -57,3 +57,12 @@ This repository contains automated API tests for the [Open-Meteo Weather API](ht
 **Implementation:** TC004 sends coordinates outside valid ranges (lat: -90 to 90, lon: -180 to 180) and expects proper 400 responses.
 
 ## Repository Structure
+
+api-tests/
+├── tests/
+│ └── test_open_meteo.py
+├── utils/
+│ ├── api_client.py
+│ └── config.py
+├── conftest.py
+└── requirements.txt
