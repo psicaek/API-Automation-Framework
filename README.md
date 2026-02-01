@@ -23,19 +23,19 @@ This repository contains automated API tests for the [Open-Meteo Weather API](ht
 
 ### Status Code Validation
 
-**Why:** Ensures API contract compliance and proper HTTP response behavior [web:16][web:20]. Status codes indicate whether requests succeeded (200), had client errors (400), or experienced server issues (500).
+**Why:** Ensures API contract compliance and proper HTTP response behavior . Status codes indicate whether requests succeeded (200), had client errors (400), or experienced server issues (500).
 
 **Implementation:** Every test validates the expected status code matches the actual response.
 
 ### Response Time Validation
 
-**Why:** Performance is critical for weather APIs used in real-time applications [web:12]. A 3-second threshold ensures acceptable user experience.
+**Why:** Performance is critical for weather APIs used in real-time applications . A 3-second threshold ensures acceptable user experience.
 
 **Implementation:** `validate_response_time()` measures elapsed time using `response.elapsed.total_seconds()`.
 
 ### JSON Schema Validation
 
-**Why:** Ensures the API returns properly formatted data that can be parsed by clients [web:18]. Invalid JSON breaks integrations.
+**Why:** Ensures the API returns properly formatted data that can be parsed by clients . Invalid JSON breaks integrations.
 
 **Implementation:** `validate_json_response()` attempts to parse response body as JSON and fails gracefully with clear error messages.
 
@@ -51,7 +51,7 @@ This repository contains automated API tests for the [Open-Meteo Weather API](ht
 
 ### Negative Testing
 
-**Why:** APIs must handle invalid inputs gracefully without crashes [web:16]. Error handling quality impacts reliability.
+**Why:** APIs must handle invalid inputs gracefully without crashes . Error handling quality impacts reliability.
 
 **Implementation:** TC004 sends coordinates outside valid ranges (lat: -90 to 90, lon: -180 to 180) and expects proper 400 responses.
 
